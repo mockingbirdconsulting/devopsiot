@@ -4,12 +4,12 @@ pipeline {
     stages {
         stage('Verify the code') {
             steps {
-                sh 'for b in $(cat boards.txt); do arduino --verbose --verify --board $(echo $b|cut -d ";" -f 1) *.ino; done'
+                sh 'arduino --verbose --verify --board arduino:avr:pro *.ino; done'
             }
         }
         stage('Upload') {
             steps {
-                sh 'for b in $(cat boards.txt); do arduino --verbose --upload --board $(echo $b|cut -d ";" -f 1) --port $(echo $b|cut -d ";" -f 2) *.ino; done'
+                sh 'arduino --verbose --upload --board arduino:avr:pro --port /dev/ttyUSB0 *.ino; done'
             }
         }
         stage('Test') {
