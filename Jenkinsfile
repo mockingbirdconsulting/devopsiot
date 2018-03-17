@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Verify the code') {
             steps {
-                shell "for b in $(cat boards.txt); do arduino --verify --board $b *.ino; done"
+                sh 'for b in $(cat boards.txt); do arduino --verify --board $b *.ino; done'
             }
         }
         stage('Build') {
