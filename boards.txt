@@ -1,2 +1,2 @@
-arduino:samd:arduino_zero_native
-arduino:avr:uno
+arduino:samd:arduino_zero_native;/dev/ttyACM0
+arduino:avr:uno;/dev/ttyUSB0
