@@ -1,0 +1,2 @@
+arduino:samd:arduino_zero_native
+arduino:avr:uno
